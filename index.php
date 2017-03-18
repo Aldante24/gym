@@ -1,75 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="vista/js/script.js"></script>
     <title>GYM</title>
   </head>
   <body>
-<form id="frmpersonal">
+<div class="">
+
       <label> Nombre Completo: </label>
-      <input type="text" name="nombre" />
+      <input type="text" name="nombre" id="nombre" />
 
       <label> Sexo: </label>
-      <input type="radio" name="sexo" value="f" /> Femenino
-      <input type="radio" name="sexo" value="m" /> Masculino
+      <select name="sexo" id="sexo">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
 
       <label> Direccion: </label>
-      <input type="text" name="direccion" />
+      <input type="text" name="direccion" id="direccion" />
 
       <label> Correo electronico: </label>
-      <input type="text" name="email" />
+      <input type="text" name="email" id="email" />
 
       <label> Telefono: </label>
-      <input type="text" name="telefono" />
+      <input type="text" name="telefono" id="telefono" />
 
       <label> Fecha de Ingreso: </label>
-      <input type="date" name="fechain" />
+      <input type="date" name="fechain" id="fechain" />
 
       <label for="imagen">Imagen:</label>
       <button type="button" name="button" target="_blank" onclick="window.open(this.href='webcamjs/camara/camara.html',this.target,'width=800,height=600,top=100,left=200,toolbar=no,location=no,status=no,menubar=no');return false;">Tomar Foto</button>
-      <input name="imagen" size="30" type="file" />
+      <input name="imagen" id="imagen" size="30" type="file" />
 
       <label> Puesto: </label>
-      <input type="text" name="puesto" />
+      <input type="text" name="puesto" id="puesto" />
 
-      <input id="enviar" type="button" value="Enviar" />
-      <!-- Comenzamos con JQUERY -->
-      <script type="text/javascript" src='vista/js/jquery-1.7.2.min.js' ></script>
-      <script type="text/javascript">
-      $(document).ready(function(){
-  $("#enviar").click(function(){
-    var formulario = $("#frmpersonal").serializeArray();
-    $.ajax({
-      type: "POST",
-      dataType: 'json',
-      url: "vista/guardar.php",
-      data: formulario,
-    }).done(function(respuesta){
-      $("#mensaje").html(respuesta.mensaje);
-    });
-  });
+      <input type="submit" name="enviar" value="Enviar" id="enviar" />
 
-    function limpiarformulario(formulario){
+      <div id="resultado"></div>
 
-  $(formulario).find('input').each(function() {
-      switch(this.type) {
-          case 'password':
-        case 'text':
-                $(this).val('');
-              break;
-          case 'checkbox':
-          case 'radio':
-              this.checked = false;
-          }
-      });
 
-      $(formulario).find('select').each(function() {
-          $("#"+this.id + " option[value=0]").attr("selected",true);
-
-    });
-  }
-  });
-  </script>
-    </form>
+    </div>
   </body>
 </html>
