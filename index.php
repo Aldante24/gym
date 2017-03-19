@@ -2,13 +2,38 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="vista/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="vista/js/script.js"></script> -->
+    <script>
+      $(document).on("ready",function(){
+        enviarDatos();
+      });
+
+      function enviarDatos(){
+        $("#frm").on("submit", function(e){
+          e.preventDefault();
+          var nombre_ = $("#nombre").val();
+          var sexo_ = $("#sexo").val();
+          var dir_ = $("#direccion").val();
+          var email_ = $("#email").val();
+          var tel_ = $("#telefono").val();
+          var fin_ = $("#fechain").val();
+          var img_ = $("#imagen").val();
+          var puesto_ = $("#puesto").val();
+          $.post("vista/guardar.php", {nombre:nombre_, sexo:sexo_, direccion:dir_, email:email_, telefono:tel_, fechain:fin_, imagen:img_, puesto:puesto_},
+          function(datos){
+            $("#resultado").html(datos)
+              });
+        });
+      };
+
+    </script>
     <title>GYM</title>
   </head>
-  <body>
-<form class="" action="vista/guardar.php" method="post">
-<div class="">
+<body>
+<div id="contenido">
+  <div id="formulario">
+    <form id="frm" method="post">
 
       <label> Nombre Completo: </label>
       <input type="text" name="nombre" id="nombre" required />
@@ -40,11 +65,9 @@
       <input type="text" name="puesto" id="puesto" />
 
       <input type="submit" name="enviar" value="Enviar"/>
-      <input type="reset" value="Limpiar Datos">
-
-      <div id="resultado"></div>
+    </form>
+    <div id="resultado"></div>
     </div>
-</form>
-    <input type="reset" value="Limpiar Datos">
-  </body>
+  </div>
+</body>
 </html>

@@ -7,7 +7,7 @@ $conexion = mysqli_connect ("localhost","root","admin","gym");
   $direccion = $_POST["direccion"];
   $email = $_POST["email"];
   $telefono = $_POST["telefono"];
-  $fechain = $_POST["fechain"];
+  // $fechain = $_POST["fechain"];
   $imagen = $_POST["imagen"];
   $puesto = $_POST["puesto"];
 
