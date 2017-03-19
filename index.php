@@ -7,13 +7,15 @@
     <title>GYM</title>
   </head>
   <body>
+<form class="" action="vista/guardar.php" method="post">
 <div class="">
 
       <label> Nombre Completo: </label>
-      <input type="text" name="nombre" id="nombre" />
+      <input type="text" name="nombre" id="nombre" required />
 
       <label> Sexo: </label>
       <select name="sexo" id="sexo">
+        <option value="">Selecciona...</option>
         <option value="Masculino">Masculino</option>
         <option value="Femenino">Femenino</option>
       </select>
@@ -27,8 +29,8 @@
       <label> Telefono: </label>
       <input type="text" name="telefono" id="telefono" />
 
-      <label> Fecha de Ingreso: </label>
-      <input type="date" name="fechain" id="fechain" />
+      <!-- <label> Fecha de Ingreso: </label>
+      <input type="date" name="fechain" id="fechain" /> -->
 
       <label for="imagen">Imagen:</label>
       <button type="button" name="button" target="_blank" onclick="window.open(this.href='webcamjs/camara/camara.html',this.target,'width=800,height=600,top=100,left=200,toolbar=no,location=no,status=no,menubar=no');return false;">Tomar Foto</button>
@@ -37,11 +39,12 @@
       <label> Puesto: </label>
       <input type="text" name="puesto" id="puesto" />
 
-      <input type="submit" name="enviar" value="Enviar" id="enviar" />
+      <input type="submit" name="enviar" value="Enviar"/>
+      <input type="reset" value="Limpiar Datos">
 
       <div id="resultado"></div>
-
-
     </div>
+</form>
+    <input type="reset" value="Limpiar Datos">
   </body>
 </html>
