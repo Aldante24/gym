@@ -19,8 +19,8 @@
           var tel_ = $("#telefono").val();
           var fin_ = $("#fechain").val();
           var img_ = $("#imagen").val();
-          var puesto_ = $("#puesto").val();
-          $.post("vista/guardar.php", {nombre:nombre_, sexo:sexo_, direccion:dir_, email:email_, telefono:tel_, fechain:fin_, imagen:img_, puesto:puesto_},
+          var membresia_ = $("#membresia").val();
+          $.post("vista/guardar.php", {nombre:nombre_, sexo:sexo_, direccion:dir_, email:email_, telefono:tel_, fechain:fin_, imagen:img_, membresia:membresia_},
           function(datos){
             $("#resultado").html(datos)
               });
@@ -78,8 +78,13 @@
     </div>
     <div class="col-xs-4 col-sm-12 col-md-4 col-lg-4">
       <br>
-      <label> Puesto: </label>
-      <input type="text" class ="form-control" name="puesto" id="puesto" />
+      <label>Membresia:</label>
+      <select class ="form-control" name="membresia" id="membresia">
+          <option value="">Selecciona...</option>
+          <option value="Oro">Oro</option>
+          <option value="Plata">Plata</option>
+          <option value="Bronce">Bronce</option>
+        </select>
       <br>
     </div>
 
@@ -97,7 +102,7 @@
 
 
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-        <br><br><br><br><br><br>
+        <br><br><br>
       <input class="btn btn-primary btn-success btn-lg" type="submit" class ="form-control" name="enviar" value="Guardar Datos"/>
       <input class="btn btn-primary btn-danger btn-lg" type="reset" class ="form-control" name="reset" value="Limpiar Datos"/>
       <br><br><br><br>
