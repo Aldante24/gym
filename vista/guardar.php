@@ -15,9 +15,13 @@ $conexion = mysqli_connect ("localhost","root","admin","gym");
   $ejecutar = mysqli_query($conexion,$insertar);
 
   if ($ejecutar) {
-    echo "<h2>Los datos han sido guardados con exito</h2>";
+    echo "<div class='alert alert-success' role='alert'>
+    <strong>Exito!</strong> Tus datos se han guardado.
+    </div>";
   }else {
-    echo "Nada";
+    echo "<div class='alert alert-danger' role='alert'>
+    <strong>Tus datos no se han guardado!</strong> Revisa tus campos.
+    </div>";
   }
 
   // $consulta = "INSERT INTO gym.personal (nombre, sexo, direccion, correo, telefono, fecha_ingreso, url_foto, puesto)VALUES('$nombre','$sexo', '$direccion','$email', $telefono, '$fechain', '$imagen', '$puesto')";
