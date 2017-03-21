@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -35,6 +38,11 @@
 	  <!-- <link rel="stylesheet" href="vista/css/estilos.css"> -->
   </head>
 <body>
+  <header>
+       <div align="right">
+         <a href="cerrarsesion.php">Cerrar Sesion</a>
+       </div>
+  </header>
     <form id="frm" method="post">
       <h1 class="text-center">Formulario de Registro</h1>
       <hr>

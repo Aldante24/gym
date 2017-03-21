@@ -1,6 +1,6 @@
 <?php
 
-$conexion = mysqli_connect ("localhost","root","admin","gym");
+  include ('../model/conexion.php');
 
   $nombre = $_POST["nombre"];
   $sexo = $_POST["sexo"];
@@ -11,7 +11,10 @@ $conexion = mysqli_connect ("localhost","root","admin","gym");
   $imagen = $_POST["imagen"];
   $membresia = $_POST["membresia"];
 
-  $insertar = "INSERT INTO personal (nombre, sexo, direccion, correo, telefono, fecha_ingreso, url_foto, tipo_mem)VALUES('$nombre','$sexo', '$direccion','$email', $telefono, current_timestamp(), IF(substr('$imagen',2)LIKE':%',concat('fotos/',substr('$imagen',11)),concat('fotos/','$imagen')), '$membresia')";
+  $insertar = "INSERT INTO personal (nombre, sexo, direccion, correo, telefono, fecha_ingreso, url_foto, tipo_mem)
+                VALUES('$nombre','$sexo', '$direccion','$email', $telefono, current_timestamp(),
+                IF(substr('$imagen',2)LIKE':%',concat('fotos/',substr('$imagen',11)),concat('fotos/','$imagen')), '$membresia')";
+
   $ejecutar = mysqli_query($conexion,$insertar);
 
   if ($ejecutar) {
@@ -23,20 +26,6 @@ $conexion = mysqli_connect ("localhost","root","admin","gym");
     <strong>Tus datos no se han guardado!</strong> Revisa tus campos.
     </div>";
   }
-
-  // $consulta = "INSERT INTO gym.personal (nombre, sexo, direccion, correo, telefono, fecha_ingreso, url_foto, puesto)VALUES('$nombre','$sexo', '$direccion','$email', $telefono, '$fechain', '$imagen', '$puesto')";
-  //
-  // // $conexion = new mysqli("localhost","root","admin","gym",3306);
-  //
-  // $respuesta = new stdClass();
-  //
-  // if($conexion->query($consulta)){
-  //   $respuesta->mensaje = "Se guardo correctamente";
-  // }
-  // else {
-  //   $respuesta->mensaje = "Ocurrió un error";
-  // }
-  // echo json_encode($respuesta);
 
 
  ?>
