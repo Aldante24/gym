@@ -7,12 +7,14 @@
   $direccion = $_POST["direccion"];
   $email = $_POST["email"];
   $telefono = $_POST["telefono"];
+  $fechafin = $_POST["fechafin"];
   // $fechain = $_POST["fechain"];
   $imagen = $_POST["imagen"];
   $membresia = $_POST["membresia"];
 
-  $insertar = "INSERT INTO personal (nombre, sexo, direccion, correo, telefono, fecha_ingreso, url_foto, tipo_mem)
-                VALUES('$nombre','$sexo', '$direccion','$email', $telefono, current_timestamp(),
+
+  $insertar = "INSERT INTO personal (nombre, sexo, direccion, correo, telefono, fecha_ingreso, fecha_baja, url_foto, tipo_mem)
+                VALUES('$nombre','$sexo', '$direccion','$email', $telefono, current_timestamp(), '$fechafin',
                 IF(substr('$imagen',2)LIKE':%',concat('fotos/',substr('$imagen',11)),concat('fotos/','$imagen')), '$membresia')";
 
   $ejecutar = mysqli_query($conexion,$insertar);

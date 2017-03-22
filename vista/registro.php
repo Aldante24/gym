@@ -20,10 +20,12 @@
           var dir_ = $("#direccion").val();
           var email_ = $("#email").val();
           var tel_ = $("#telefono").val();
+          var ffin_ = $("#fechafin").val();
           var fin_ = $("#fechain").val();
           var img_ = $("#imagen").val();
           var membresia_ = $("#membresia").val();
-          $.post("guardar.php", {nombre:nombre_, sexo:sexo_, direccion:dir_, email:email_, telefono:tel_, fechain:fin_, imagen:img_, membresia:membresia_},
+
+          $.post("guardar.php", {nombre:nombre_, sexo:sexo_, direccion:dir_, email:email_, telefono:tel_, fechafin:ffin_, fechain:fin_, imagen:img_, membresia:membresia_},
           function(datos){
             $("#resultado").html(datos)
               });
@@ -94,6 +96,12 @@
           <option value="Bronce">Bronce</option>
         </select>
       <br>
+    </div>
+
+    <div class="col-xs-4 col-sm-12 col-md-4 col-lg-4">
+      <br>
+      <label for="fechafin">Fecha de Vencimiento:</label><br>
+      <input type="date" class ="form-control" name="fechafin" id="fechafin" />
     </div>
 
     <div class="col-xs-4 col-sm-12 col-md-4 col-lg-4">
