@@ -1,24 +1,8 @@
 <?php
-  session_start();
+include('header.php')
  ?>
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <title>GYM | Registro</title>
-    <section class="container">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	  <!-- <link rel="stylesheet" href="vista/css/estilos.css"> -->
-  </head>
 <body>
-  <header>
-       <div align="right">
-         <a href="cerrarsesion.php">Cerrar Sesion</a>
-       </div>
-  </header>
+
     <form id="frm" method="post">
       <h1 class="text-center">Formulario de Registro</h1>
       <hr>
@@ -103,4 +87,6 @@
 <section class="container">
   <div id="resultado"></div>
 </section>
-</html>
+<?php
+  include('footer.php')
+ ?>
