@@ -1,8 +1,8 @@
 <?php
 include('header.php')
  ?>
+         <script src="js/script.js"></script>
 <body>
-
     <form id="frm" method="post">
       <h1 class="text-center">Formulario de Registro</h1>
       <hr>
@@ -76,17 +76,19 @@ include('header.php')
 
 
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-        <br><br><br>
+        <br>
       <input class="btn btn-primary btn-success btn-lg" type="submit" class ="form-control" name="enviar" value="Guardar Datos"/>
       <input class="btn btn-primary btn-danger btn-lg" type="reset" class ="form-control" name="reset" value="Limpiar Datos"/>
-      <br><br><br><br>
     </div>
+  </div>
+  <section>
+         <div id="resultado"></div>
+  </section>
+
     </form>
   </body>
 </section>
-<section class="container">
-  <div id="resultado"></div>
-</section>
+
 <?php
   include('footer.php')
  ?>

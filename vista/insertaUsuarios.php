@@ -45,15 +45,15 @@ include('header.php')
   <br><br><br>
 <input class="btn btn-primary btn-success btn-lg" type="submit" class ="form-control" name="enviar" value="Guardar Datos"/>
 <input class="btn btn-primary btn-danger btn-lg" type="reset" class ="form-control" name="reset" value="Limpiar Datos"/>
-<br><br><br><br>
 </div>
-
+</div>
+<section class="container">
+  <div id="resultado"></div>
+</section>
     </form>
   </section>
   </body>
-  <section class="container">
-    <div id="resultado"></div>
-  </section>
+
 
   <?php
     include('footer.php')
