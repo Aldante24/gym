@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #FFFFFA;
+}
+
+header{
+  width: 100%;
+}
+
+header nav { /*Color del Menu*/
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  background: #9E7438;
+}
+
+.menu_bar{ /*Esconde div menu_bar*/
+  display: none;
+}
+
+header nav ul{ /*Quita Viñetas*/
+  overflow: hidden;
+  list-style: none;
+}
+
+header nav ul li{
+  float: left;
+}
+
+header nav ul li a{
+  color: #fff;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+}
+
+header nav ul li span{
+  margin-right: 10px;
+}
+
+header nav ul li a:hover{ /*Color al pasar el mouse*/
+  background: #EC971F;
+}
+
+section{
+  padding: 20px;
+}
+
+@media screen and (max-width:800px){
+  header nav{
+    width: 80%;
+    height: 100%;
+    left: -100%;
+    margin: 0;
+    position: fixed;
+  }
+
+  header nav ul li{
+    display: block;
+    float: none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .menu_bar{
+    display: block;
+    width: 100%;
+    background: #ccc;
+  }
+
+  .menu_bar .bt-menu{
+    display: block;
+    padding: 20px;
+    background: #9E7438;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing: border-box;
+  }
+
+  .menu_bar span{
+    float: right;
+    font-size: 40px;
+  }
+}
